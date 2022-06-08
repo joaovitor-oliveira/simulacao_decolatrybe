@@ -1,10 +1,8 @@
 def solve(brackets):
     count = 0
 
-    open_brackets = {'{', '[', '('}
-
     for b in brackets:
-        if b in open_brackets:
+        if b == '(':
             count += 1
         else:
             count -= 1
@@ -12,4 +10,4 @@ def solve(brackets):
         if count < 0:
             return False
 
-    return True
+    return count == 0
